@@ -4,3 +4,4 @@ python-pptx
 requests
 Pillow
 yt-dlp
+flask
