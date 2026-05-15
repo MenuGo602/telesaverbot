@@ -2,6 +2,26 @@ import telebot
 import yt_dlp
 import os
 from telebot import types
+import os
+from threading import Thread
+from flask import Flask
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot ishlanyapti!"
+
+def run():
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+# Botni ishga tushirishdan oldin serverni yoqamiz
+keep_alive()
+
 
 TOKEN = "8619930243:AAFZ-aa1R071xWnSa_TViBEp8c0l3nYmxgs"
 
